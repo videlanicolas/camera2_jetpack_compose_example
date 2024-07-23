@@ -20,14 +20,20 @@ import androidx.compose.material3.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Refresh
 
+// Composable functino to display a "refresh" button icon. This will be the way for the user to
+// go back to "taking a picture" mode.
 @Composable
 fun NewPictureButton(onNewPictureButtonClick: () -> Unit) {
+    // Make a Box and fill it to the entire screen.
     Box (modifier = Modifier.fillMaxSize()) {
+        // We use a Row composable here if you want to add other composable nodes. But it's not
+        // required if you just want to display a camera button.
         Row(
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .padding(16.dp)
         ) {
+            // Make a nice thin circle outline.
             Box(
                 modifier = Modifier
                     .padding(bottom = 16.dp)
@@ -45,6 +51,7 @@ fun NewPictureButton(onNewPictureButtonClick: () -> Unit) {
                             onNewPictureButtonClick()
                         }
                 ) {
+                    // Use a material design button.
                     Icon(
                         // Use a replay icon.
                         imageVector = Icons.Default.Refresh,
